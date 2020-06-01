@@ -20,6 +20,32 @@ void main() => runApp(
 class BallPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Ball();
+  }
+}
+
+class Ball extends StatefulWidget {
+  @override
+  _BallState createState() => _BallState();
+}
+
+class _BallState extends State<Ball> {
+
+  void onBallClicked(){
+    print("Ball Clicked");
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+        child: FlatButton(
+          onPressed: () {
+            onBallClicked();
+          },
+          child: Image.asset('images/ball1.png'),
+        ),
+      ),
+    );
   }
 }
